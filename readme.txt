@@ -173,9 +173,10 @@ include/search_idx.php
 #---------[ 14. TROUVER ]--------------------------------------------------
 #
 
-	// Remove BBCode
+// Remove BBCode
 	$text = preg_replace('%\[/?(b|u|s|ins|del|em|i|h|colou?r|quote|code|img|url|email|list|topic|post|forum|user)(?:\=[^\]]*)?\]%', ' ', $text);
 
+	
 #
 #---------[ 15. ADD AFTER ]------------------------------------------------
 #---------[ 15. AJOUTER APRES ]--------------------------------------------
@@ -400,7 +401,7 @@ include/parser.php
 	$pattern[] = '%\[right\](.*?)\[/right\]%ms';
 	$pattern[] = '%\[center\](.*?)\[/center\]%ms';
 	$pattern[] = '%\[justify\](.*?)\[/justify\]%ms';
-	$pattern[] = '%\[video\]([^\[<]*?)/video/([^_\[<]*?)_([^\[<]*?)\[/video\]%ms';
+	$pattern[] = '%\[video\]([^\[<]*?)/video/([^\[<]*?)\[/video\]%ms';
 	$pattern[] = '%\[video=([0-9]+),([0-9]+)\]([^\[<]*?)/video/([^_\[<]*?)_([^\[<]*?)\[/video\]%ms';
 	$pattern[] = '%\[video\]([^\[<]*?)/(v/|watch\?v=)([^\[<]*?)\[/video\]%ms';
 	$pattern[] = '%\[video=([0-9]+),([0-9]+)\]([^\[<]*?)/(v/|watch\?v=)([^\[<]*?)\[/video\]%ms';
@@ -423,9 +424,9 @@ include/parser.php
 	$replace[] = '</p><p style="text-align: right">$1</p><p>';
 	$replace[] = '</p><p style="text-align: center">$1</p><p>';
 	$replace[] = '</p><p style="text-align: justify">$1</p><p>';
-	$replace[] = '<object type="application/x-shockwave-flash" data="http://www.dailymotion.com/swf/video/$2" width="480" height="384"><param name="movie" value="http://www.dailymotion.com/swf/video/$2" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><p>Flash required</p></object>';
-	$replace[] = '<object type="application/x-shockwave-flash" data="http://www.dailymotion.com/swf/video/$4" width="$1" height="$2"><param name="movie" value="http://www.dailymotion.com/swf/video/$4" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><p>Flash required</p></object>';
-	$replace[] = '<object type="application/x-shockwave-flash" data="http://www.youtube.com/v/$3" width="425" height="344"><param name="movie" value="http://www.youtube.com/v/$3" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><p>Flash required</p></object>';
+	$replace[] = '<iframe frameborder="0" width="200" height="145" src="https://www.dailymotion.com/embed/video/$2" allow="autoplay; fullscreen"></iframe>';
+	$replace[] = '<iframe frameborder="0" width="200" height="145" src="https://www.dailymotion.com/embed/video/$4" allow="autoplay; fullscreen"></iframe>';
+	$replace[] = '<iframe width="300" height="200" src="https://www.youtube.com/embed/$3" allowfullscreen></iframe>';
 	$replace[] = '<object type="application/x-shockwave-flash" data="http://www.youtube.com/v/$5" width="$1" height="$2"><param name="movie" value="http://www.youtube.com/v/$5" /><param name="allowFullScreen" value="true" /><param name="allowScriptAccess" value="always" /><p>Flash required</p></object>';
 
 #

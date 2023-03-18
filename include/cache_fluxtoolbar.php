@@ -45,14 +45,14 @@ function generate_ftb_cache($form = 'form')
 			}
 
 			// Output for checking
-			$output_check .= 'if (preg_match(\'%(?:\[/?(?:'.implode($tags, '|').')\]';
-			if (!empty($tags_prompt))
-				$output_check .= '|\[(?:'.implode($tags_prompt, '|').')=';
-			$output_check .= ')%i\', $username))'."\n";
-			$output_check .= "\t".'$errors[] = $lang_prof_reg[\'Username BBCode\'];'."\n";
+	$output_check .= 'if (preg_match(\'%(?:\[/?(?:'.implode('|',$tags).')\]';
+	if (!empty($tags_prompt))
+		$output_check .= '|\[(?:'.implode('|', $tags_prompt).')=';
+	$output_check .= ')%i\', $username))'."\n";
+	$output_check .= "\t".'$errors[] = $lang_prof_reg[\'Username BBCode\'];'."\n";
 
-			// Output for search
-			$output_search .= '$text = preg_replace(\'%\[/?('.implode($tags, '|').')(?:\=[^\]]*)?\]%\', \' \', $text);'."\n";
+	// Output for search
+	$output_search .= '$text = preg_replace(\'%\[/?('.implode('|',$tags).')(?:\=[^\]]*)?\]%\', \' \', $text);'."\n";
 		}
 
 		write_cache('cache_fluxtoolbar_tag_check.php', $output_check);

@@ -141,7 +141,7 @@ else if (isset($_POST['form_conf']))
 	$form = array_map('trim', $_POST['form']);
 
 	$done = false;
-	while (list($key, $input) = @each($form))
+	foreach($form  as $key => $input)
 	{
 		// Only update values that have changed
 		if (array_key_exists($key, $ftb_conf) && $ftb_conf[$key] != $input)
