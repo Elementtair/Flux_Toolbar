@@ -33,7 +33,8 @@ function generate_ftb_cache($form = 'form')
 
 		// Retrieve new bbcode tags
 		$result = $db->query('SELECT code, func FROM '.$db->prefix.'toolbar_tags WHERE code NOT IN (\'b\', \'u\', \'i\', \'s\', \'h\', \'color\', \'quote\', \'code\', \'img\', \'url\', \'email\', \'list\', \'*\', \'\')') or error('Unable to retrieve new bbcode tags', __FILE__, __LINE__, $db->error());
-		if ($db->num_rows($result))
+		//if ($db->num_rows($result))
+		if($result->num_rows > 0)
 		{
 			$tags = array();
 			$tags_prompt = array();
