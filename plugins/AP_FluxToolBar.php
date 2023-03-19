@@ -709,7 +709,7 @@ else
 	$d->close();
 	@natsort($packs);
 
-	while (list(, $temp) = @each($packs))
+	foreach($packs  as $var => $temp)
 	{
 		if ($ftb_conf['img_pack'] == $temp)
 			echo "\t\t\t\t\t\t\t\t\t".'<option value="'.$temp.'" selected="selected">'.$temp.'</option>'."\n";
