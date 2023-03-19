@@ -95,9 +95,12 @@ function install()
 		'button_width'		=>	'32',
 		'button_height'		=>	'32'
 	);
-	while (list($conf_name, $conf_value) = @each($config))
+	//while (list($conf_name, $conf_value) = @each($config))
+	foreach ( $config as $conf_name => $conf_value)
+	{
 		$db->query('INSERT INTO '.$db->prefix.'toolbar_conf (conf_name, conf_value) VALUES(\''.$db->escape($conf_name).'\', \''.$db->escape($conf_value).'\')') or error('Unable to insert in toolbar_conf table', __FILE__, __LINE__, $db->error());
-
+		
+	}
 	// Insert default tags
 	$tags = array(
 		"'smilies', '', '1', '1', 'bt_smilies.png', '0', '0'",
