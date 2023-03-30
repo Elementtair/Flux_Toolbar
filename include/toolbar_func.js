@@ -71,6 +71,7 @@ function toolBar(textarea, bt_img_path, smilies_img_path)
 		htxt = htxt.replace(new RegExp(/&quot;/g), '"');
 		htxt = htxt.replace(new RegExp(/&lt;/g), '<');
 		htxt = htxt.replace(new RegExp(/&gt;/g), '>');
+		htxt = (" " + htxt);
 		i.src = smilies_img_path + src;
 		i.title = txt;
 		i.tabIndex = 400;
