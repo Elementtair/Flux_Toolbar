@@ -79,6 +79,7 @@ if ($pun_config['o_smilies'] == '1')
 		htxt = htxt.replace(new RegExp(/&quot;/g), '"');
 		htxt = htxt.replace(new RegExp(/&lt;/g), '<');
 		htxt = htxt.replace(new RegExp(/&gt;/g), '>');
+		htxt = (" " + htxt);
 		i.src = 'img/smilies/' + src;
 		i.title = htxt;
 		i.style.padding = '0.2em';
