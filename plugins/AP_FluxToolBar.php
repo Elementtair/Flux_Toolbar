@@ -321,7 +321,8 @@ else if (isset($_POST['edit_delete']))
 	// Delete selected tags/buttons
 	if (isset($_POST['delete']))
 	{
-		$db->query('DELETE FROM '.$db->prefix.'toolbar_tags WHERE name IN (\''.implode(array_keys($_POST['name']), "', '").'\')') or error('Unable to delete tags', __FILE__, __LINE__, $db->error());
+		$db->query('DELETE FROM '.$db->prefix.'toolbar_tags WHERE name IN (\''.implode( "', '", array_keys($_POST['name'])).'\')') or error('Unable to delete tags', __FILE__, __LINE__, $db->error());
+  
 		re_generate('all');
 		redirect(PLUGIN_URL, $lang_ftb_admin['success_deleted']);
 	}
@@ -361,7 +362,7 @@ else if (isset($_POST['edit_delete']))
 
 		// End message
 		if (!empty($errors))
-			message(implode($errors, "<br />\n"));
+			message(implode("<br />\n", $errors ));
 		else if ($edited)
 		{
 			re_generate('all');
@@ -390,7 +391,7 @@ else if (isset($_POST['create']))
 		redirect(PLUGIN_URL, $lang_ftb_admin['success_created']);
 	}
 	else
-		message(implode($errors, "<br />\n"));
+		message(implode("<br />\n",$errors));
 }
 
 // Delete images
