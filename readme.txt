@@ -2,12 +2,12 @@
 ##
 ##        Mod title:  FluxToolBar
 ##
-##      Mod version:  2.1.1
-##  Works on FluxBB:  1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4
+##      Mod version:  2.1.2
+##  Works on FluxBB:  1.5.0, 1.5.1, 1.5.2, 1.5.3, 1.5.4, 1.5.11
 ##     Release date:  2013-08-14
 ##
 ##           Author:  Mpok (mpok@fluxbb.fr)
-##     Contributors:  Vin100 (PunToolBar), CodeXP, adaur
+##     Contributors:  Vin100 (PunToolBar), CodeXP, adaur, Elementair
 ##
 ##      Description:  This mod displays a bar of buttons in post forms
 ##                    which makes it possible to add BBCode easily.
@@ -15,7 +15,7 @@
 ##                    acronym, superscript, subscript, text alignments,
 ##                    and video.
 ##
-##   Repository URL:  http://fluxbb.org/resources/mods/fluxtoolbar
+##   Repository URL:  https://github.com/Elementtair/Flux_Toolbar
 ##
 ##   Affected files:  include/parser.php
 ##                    include/search_idx.php
@@ -191,6 +191,7 @@ include/search_idx.php
 		generate_ftb_cache('tags');
 		require FORUM_CACHE_DIR.'cache_fluxtoolbar_tag_search.php';
 	}
+
 
 #
 #---------[ 16. OPEN ]-----------------------------------------------------

@@ -3,13 +3,13 @@
 
 // Some info about your mod.
 $mod_title	= 'FluxToolBar';
-$mod_version	= '2.1.1';
+$mod_version	= '2.1.2';
 $release_date	= '2013-08-14';
 $author		= 'Mpok - Fluxbb.fr';
 $author_email	= 'mpok@fluxbb.fr';
 
 // Versions of FluxBB this mod was created for. A warning will be displayed, if versions do not match
-$fluxbb_versions= array('1.5.11');
+$fluxbb_versions= array('1.5.11','1.5.12');
 
 // Set this to false if you haven't implemented the restore function (see below)
 $mod_restore	= true;
