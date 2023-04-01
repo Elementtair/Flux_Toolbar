@@ -83,7 +83,7 @@ function validate_tag($t, $mode, $name = '')
 	if ($mode == 'create' || ($mode == 'edit' && $name != $t['name']))
 	{
 		$res = $db->query('SELECT 1 FROM '.$db->prefix.'toolbar_tags WHERE name=\''.$db->escape($t['name']).'\'') or error('Unable to retrieve tag name', __FILE__, __LINE__, $db->error());
-		if ($db->num_rows($res))
+		if (!empty($db->result($res)))
 			$errors[] = $lang_ftb_admin['name_used'].$t['name'];
 	}
 
@@ -102,7 +102,7 @@ function validate_tag($t, $mode, $name = '')
 
 	// Checking code already used
 	$res = $db->query('SELECT 1 FROM '.$db->prefix.'toolbar_tags WHERE name!=\''.$db->escape($old['name']).'\' AND code!=\''.$db->escape($old['code']).'\' AND code=\''.$db->escape($t['code']).'\'') or error('Unable to retrieve tag name', __FILE__, __LINE__, $db->error());
-	if ($db->num_rows($res))
+	if (!empty($db->result($res)))
 		$errors[] = $lang_ftb_admin['code_used'].$t['code'];
 
 	// Checking incorrect characters for code
